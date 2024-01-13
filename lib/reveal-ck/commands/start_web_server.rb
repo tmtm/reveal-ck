@@ -1,6 +1,7 @@
 require 'rack'
 require 'webrick'
 require 'rack/livereload'
+require 'rackup/server'
 
 module RevealCK
   module Commands
@@ -14,12 +15,12 @@ module RevealCK
       end
 
       def run
-        Rack::Server.new(app: build_rack_app(doc_root),
-                         Host: host,
-                         Port: port,
-                         Logger: server_log,
-                         DoNotReverseLookup: true,
-                         AccessLog: access_log).start
+        Rackup::Server.new(app: build_rack_app(doc_root),
+                           Host: host,
+                           Port: port,
+                           Logger: server_log,
+                           DoNotReverseLookup: true,
+                           AccessLog: access_log).start
       end
 
       private

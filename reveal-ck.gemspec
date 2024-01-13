@@ -27,6 +27,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'listen'
   s.add_dependency 'rack'
   s.add_dependency 'rack-livereload'
+  s.add_dependency 'rackup'
   s.add_dependency 'rake'
   s.add_dependency 'rinku'
   s.add_dependency 'slim'
